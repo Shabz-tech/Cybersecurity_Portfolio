@@ -1,8 +1,12 @@
-# Windows Server 2019: DHCP, DNS, IIS, and FTP Server Configuration & Testing
+# Windows Server 2019: DHCP, DNS, IIS, and FTP Server Configuration & Testing - also Routing
 
 ## Overview
 
-This lab documents my practical experience configuring a Windows Server 2019 environment to provide core network and web services. The tasks included:
+This lab documents my practical experience configuring a Windows Server 2019 environment to provide core network and web services. I am doing these labs to showcase my interest in learning new tools to achieve the task.
+
+I found Windows Server 2019 functions straight forward. The challenge started when I wanted to route all traffic via Linux Firewall.
+
+The tasks included:
 
 - Installing Active Directory DS.
 - Joining a Windows 10 client to the server's domain
@@ -10,9 +14,7 @@ This lab documents my practical experience configuring a Windows Server 2019 env
 - Installing and testing IIS with ASP.NET support
 - Installing and testing an FTP Server within IIS
 - A Linux VM that acts as a router/firewall with 1x NIC for NAT (internet) and 1x NIC for internal LAN
-- DNS forwarding rules on Server passes request to the Linux VM (router).
-- Used routing tools and DNS tools such as dnsmasq to resolve DNS requests.
-- All traffic on network goes through Linux VM to access the internet.
+- Route all traffic through Linux VM and back. Server and Client will not be connecting to the internet directly.
 - UFW rules set to protect server from icmp floods.
 
 The lab is something I decided to do to expand my knowledge on real world networking. I had the option to use tools such as packet tracer but I love playing with real tools too much.
@@ -34,7 +36,7 @@ The lab is something I decided to do to expand my knowledge on real world networ
 ## Tasks Performed
 
 ### 1. Domain Join & Network Configuration
-- Configured static IP for server (e.g., 192.168.1.1) with server as DNS
+- Configured static IP for server (e.g., 192.168.10.10) with server as DNS
 - Verified connectivity using ping between client and server
 - Joined Windows 10 client to the server's domain
 - Logged into client using a domain user account
@@ -63,7 +65,7 @@ The lab is something I decided to do to expand my knowledge on real world networ
 - Verified DNS configuration (Forward Lookup Zones)
 - Tested IIS using:
   - http://shabtech.com
-  - http://192.168.1.1
+  - http://192.168.10.10
   - http://127.0.0.1
 
 ---
