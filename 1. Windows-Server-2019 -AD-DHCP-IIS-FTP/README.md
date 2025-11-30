@@ -4,7 +4,7 @@
 
 This lab documents my practical experience configuring a Windows Server 2019 environment to provide core network and web services. I am doing these labs to showcase my interest in learning new tools to achieve the task.
 
-I found Windows Server 2019 functions straight forward. The challenge started when I wanted to route all traffic via Linux Firewall.
+I found Windows Server 2019 functions straight forward. The challenge started when I wanted to route all traffic via Linux Firewall. However, we persevered and finished our tasks.
 
 The tasks included:
 
