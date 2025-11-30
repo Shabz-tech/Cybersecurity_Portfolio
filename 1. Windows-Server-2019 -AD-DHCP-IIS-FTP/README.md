@@ -1,24 +1,30 @@
-# Windows Server 2019: DHCP, IIS, and FTP Server Configuration & Testing
+# Windows Server 2019: DHCP, DNS, IIS, and FTP Server Configuration & Testing
 
 ## Overview
 
 This lab documents my practical experience configuring a Windows Server 2019 environment to provide core network and web services. The tasks included:
 
+- Installing Active Directory DS.
 - Joining a Windows 10 client to the server's domain
-- Installing and configuring DHCP Server
+- Installing and configuring DHCP Server and DNS.
 - Installing and testing IIS with ASP.NET support
 - Installing and testing an FTP Server within IIS
+- A Linux VM that acts as a router/firewall with 1x NIC for NAT (internet) and 1x NIC for internal LAN
+- DNS forwarding rules on Server passes request to the Linux VM (router).
+- Used routing tools and DNS tools such as dnsmasq to resolve DNS requests.
+- All traffic on network goes through Linux VM to access the internet.
+- UFW rules set to protect server from icmp floods.
 
-The lab simulates a real-world enterprise environment with a domain-joined client, central DHCP address allocation, web services, and file transfer services.
-
----
+The lab is something I decided to do to expand my knowledge on real world networking. I had the option to use tools such as packet tracer but I love playing with real tools too much.
 
 ## Environment
 
 - Server OS: Windows Server 2019 (Domain Controller)
 - Client OS: Windows 10 (Domain-joined)
-- Network: Private VM network with static IP for server and DHCP for client
+- Firewall/Router: Linux Mint
 - Roles & Features Installed:
+  - AD
+  - DNS
   - DHCP Server
   - Web Server (IIS) with ASP/ASP.NET
   - FTP Server within IIS
@@ -71,17 +77,31 @@ The lab simulates a real-world enterprise environment with a domain-joined clien
 - Logged in with domain user credentials
 - Confirm file transfer capability
 
+### 5. **Linux Mint (Router/Firewall)** 
+This was a big learning step for me on my journey to becoming proficient at linux.
+Prior to this, I did not know that linux VM can be used as a firewall and router.
+
+I learnt about using linux tool to create firewall rules and packet forwarding via iptables. I researched and learnt to use sysctl to enable Packet Forwarding to enable Linux to forward packets from LAN to NAT adaptor.
+
+I used a lightweight DNS forwarder (dnsmasq) as Windows Server DNS was not working. 
+
+Minor things such as how to stop and start/enable dnsmasq
+
+Learnt how to save and reload the iptable rules on reboot by using iptables-persistant and netfilter-persistent.
+
+Other common tools used for testing were - ping, ip a, nslookup.
+
 --------
-(1.png)
-(2.png)
-(3.png)
-(4.png)
-(5.png)
-(6.png)
-(7.png)
-(8.png)
-(9.png)
-(10.png)
-(11.png)
-(12.png)
-(13.png)
+[](1.png)
+[](2.png)
+[](3.png)
+[](4.png)
+[](5.png)
+[](6.png)
+[](7.png)
+[](8.png)
+[](9.png)
+[](10.png)
+[](11.png)
+[](12.png)
+[](13.png)
