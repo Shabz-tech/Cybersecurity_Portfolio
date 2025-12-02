@@ -2,7 +2,11 @@
 
 ## Overview
 
-This lab documents my practical experience configuring a Windows Server 2019 environment to provide core network and web services. I am doing these labs to showcase my interest in learning new tools to achieve the task.
+This lab documents my practical experience configuring a Windows Server 2019 environment to provide core network and web services. This was something I built as part of one of my projects at RMIT. 
+
+It is a basic client server model with a Linux VM acting as a Firewall and Router. It is a simple network that is part of 192.168.10.0/24 subnet. There are no Vlans and it is definetly not hardened. I will build the rest of the homelab virtual network on top of this and implement industry standard firewall/router, implement Vlans, use IDS/IPS, SEIM tools etc.
+
+Back to the current lab!
 
 I found Windows Server 2019 functions straight forward. The challenge started when I wanted to route all traffic via Linux Firewall. However, we persevered and finished our tasks.
 
@@ -83,15 +87,15 @@ The lab is something I decided to do to expand my knowledge on real world networ
 This was a big learning step for me on my journey to becoming proficient at linux.
 Prior to this, I did not know that linux VM can be used as a firewall and router.
 
-I learnt about using linux tool to create firewall rules and packet forwarding via iptables. I researched and learnt to use sysctl to enable Packet Forwarding to enable Linux to forward packets from LAN to NAT adaptor.
+I learnt about using linux tools to create firewall rules and packet forwarding via iptables. I researched and learnt to use sysctl to enable Packet Forwarding to enable Linux to forward packets from LAN to NAT adaptor.
 
 I used a lightweight DNS forwarder (dnsmasq) as Windows Server DNS was not working. 
 
-Minor things such as how to stop and start/enable dnsmasq
+I learnt the hard way about how to save and reload the iptable rules on reboot. By using using iptables-persistant and netfilter-persistent save command!.
 
-Learnt how to save and reload the iptable rules on reboot by using iptables-persistant and netfilter-persistent.
+The tools used for testing were - ping, ip a, nslookup. I also used iptables command to check if packet forwarding from LAN interfaces to WAN inside virtualbox were configured on the correct interfaces. Finally tcpdump command to check packets recieved on interfaces to troubleshoot issues I caused by not saving iptables.
 
-Other common tools used for testing were - ping, ip a, nslookup.
+It was also really cool to see how Virtualbox network adaptors operate and connect VMs together.
 
 --------
 [](1.png)
