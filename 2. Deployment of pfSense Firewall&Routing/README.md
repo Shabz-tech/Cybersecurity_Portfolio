@@ -110,7 +110,8 @@ This will be hardened as I continue with more labs but for the initial set-up an
 
 ## 6. Validation
 
-From the Windows Server 2019 Powershell, I then pinged Vlan10, 20 and 30 Gateways. I checked DNS Resolver and all pings were successful!!
+From the Windows Server 2019 Powershell, I then pinged Vlan10, 20 and 30 Gateways and all pings were successful!!
+I tested DNS Resolver by using Powershell command Resolve-Dnsname google.com and it returned real public ip addresses!!!
 
 ## 7. Learning Outcome
 
