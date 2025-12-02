@@ -30,7 +30,7 @@ I used network 192.168.10.0/24 as Domain Controller. Behind this network, I plac
 **Action:** Right-click pfSense VM > **Settings** > **Network**. Ensure 4 Adapters are enabled.
 
 * **Adapter 1 (WAN):**
-    * Attached to: `Bridged Adapter`
+    * Attached to: Bridged Adapter
    
 * **Adapter 2 (LAN - Identity):**
     * Attached to: Internal Network
