@@ -119,4 +119,4 @@ I have also just now started to dip my toes in the world of pfSense and got my h
 
 I am excited to explore pfSense further and learn more about different policies/rules I can implement to control traffic going in and out of the network.
 
-![Screenshot](path/to/1.png)
+![Screenshot](1.png)
