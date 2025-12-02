@@ -112,4 +112,11 @@ This will be hardened as I continue with more labs but for the initial set-up an
 
 From the Windows Server 2019 Powershell, I then pinged Vlan10, 20 and 30 Gateways. I checked DNS Resolver and all pings were successful!!
 
-![](path/to/1.png)
+## 7. Learning Outcome
+
+I am really getting to understand Virtualisation and Hypervisors. I researched and learned about different types of Network Adaptors and their usecase inside Hypervisors for the purpose of this lab. 
+I have also just now started to dip my toes in the world of pfSense and got my hands on an actual Firewall tool. 
+
+I am excited to explore pfSense further and learn more about different policies/rules I can implement to control traffic going in and out of the network.
+
+![Screenshot](path/to/1.png)
