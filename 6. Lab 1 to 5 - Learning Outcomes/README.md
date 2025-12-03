@@ -107,4 +107,5 @@ Throughout these labs, I encountered real-world theoretical conflicts:
 
 ### Finishing thoughts...
 
-I have successfully built the "User," "Identity," and "Server" Segments. Only thing I am missing is that I do not have a method to demonstrate network architecture in the traditional sense. Traditionally you will have a core layer, distribution layer and then finally access layer. In newer designs, there is . The infrastructure is now segmented, integrated, and hardened. I am ready to implement Data Governance in Lab 5.
+I have successfully built the "User," "Identity," and "Server" Segments. Only thing I am missing is that I do not have a method to demonstrate network architecture in the traditional sense. Traditionally you will have a core layer, distribution layer and then finally access layer. There is also spine and leaf architecture. I will try to get my hands on some real equiment to demonstrate my understanding of scalability and redundancy.
+Anyhow, the infrastructure is now segmented, integrated, and hardened. I am ready to implement Data Governance in Lab 6.
