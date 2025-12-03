@@ -4,9 +4,7 @@
 
 This lab documents my practical experience configuring a Windows Server 2019 environment to provide core network and web services. This was something I built as part of one of my projects at RMIT. 
 
-It is a basic client server model with a Linux VM acting as a Firewall and Router. It is a simple network that is part of 192.168.10.0/24 subnet. There are no Vlans and it is definetly not hardened. I will build the rest of the homelab virtual network on top of this and implement industry standard firewall/router, implement Vlans, use IDS/IPS, SEIM tools etc.
-
-Back to the current lab!
+It is a basic client server model with a Linux VM acting as a Firewall and Router. It is a simple network that is part of 192.168.10.0/24 subnet. I will build the rest of the homelab virtual network on top of this and implement industry standard firewall/router, implement Vlans, use IDS/IPS, SEIM tools etc.
 
 I found Windows Server 2019 functions straight forward. The challenge started when I wanted to route all traffic via Linux Firewall. However, we persevered and finished our tasks.
 
@@ -21,7 +19,7 @@ The tasks included:
 - Route all traffic through Linux VM and back. Server and Client will not be connecting to the internet directly.
 - UFW rules set to protect server from icmp floods.
 
-The lab is something I decided to do to expand my knowledge on real world networking. I had the option to use tools such as packet tracer but I love playing with real tools too much.
+The lab is something I decided to do to expand my knowledge on real world networking.
 
 ## Environment
 

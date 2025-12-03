@@ -15,15 +15,13 @@ Here is the same table again:
 | **OPT1** | **USER** | 192.168.20.0/24 | Vlan20 | Client Workstations. |
 | **OPT2** | **SERVER** | 192.168.30.0/24 | Vlan30 | App & Web Servers. |
 
-In the last lab, we configured pfSense to implement InterVlan Routing on Virtualbox (not real InterVlan Routing, but for the sake of making this work), We configured Interfaces on pfSense which are the Gateways for machines in our Vlans.
+In the last lab, I configured pfSense to implement InterVlan Routing on Virtualbox (not real InterVlan Routing, but for the sake of making this work), We configured Interfaces on pfSense which are the Gateways for machines in our Vlans.
 So far, we have placed our Windows Server 2019 on subnet 192.168.10.0/24
 
 ## Our Topology and Why it matters.
 In the last lab, I mentioned we have moved the Server behind the Firewall. Well technically that is correct, as no-one can access the Server/DC without going through the firewall. Our actuall topology looks more like a Hub and Spoke or Star Topology.
-No Vlans are connected directly to one another, all are routed through pfSense.
-In an event of an attack, lets say someone from Vlan 20 (Users), happens to fall victim to a phishing email and attackers gains access to their user account. The attack is still isolated in that Segment (Vlan 20).
-Rest of our resources (eg. Windows Server Services like AD, or Web server that will be implemented later on another Vlan) will not be affected.
-This is the FIRST lesson in CyberSecurity that was taught to me during my Networking class.
+Each Vlan is connected on their own separated spoke to the Firewall/Router. All traffic is routed though pfSense before it leaves each Vlan.
+Network Segmentation was the FIRST lesson in CyberSecurity that was taught to me during my Networking class.
 
 ---
 

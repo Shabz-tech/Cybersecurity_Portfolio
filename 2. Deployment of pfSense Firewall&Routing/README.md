@@ -3,9 +3,9 @@
 **Objective:** 
 Deploy the pfSense firewall and establish the secure network zones using a 192.168.x.x addressing standard.
 
-Move the Windows Server 2019 to the "Identity" subnet (192.168.10.0) right behind a firewall. Start implementing of Network Segmentation. Route traffic across subnet 192.168.10.0, 192.168.20.0, 192.168.30.0 using pfSense.
+Move the Windows Server 2019 to the "Identity" subnet (192.168.10.0) right behind a firewall. Start implementing Network Segmentation. Route traffic across subnet 192.168.10.0, 192.168.20.0, 192.168.30.0 using pfSense.
 
-Unfortunately due to lack of money and resources, this lab is all virtual and Virtualbox does not support true Vlans and Dot1Q tagging of packets. So we have to use multiple network adaptors with pfSense that operate on the LAN side which will simulate Vlans. 
+Unfortunately due to some personal constraints, this lab is all virtual and Virtualbox does not support true Vlans and Dot1Q tagging of packets. So we have to use multiple network adaptors with pfSense that operate on the LAN side which will simulate Vlans. 
 
 ---
 
@@ -112,8 +112,6 @@ This will be hardened as I continue with more labs but for the initial set-up an
 
 From the Windows Server 2019 Powershell, I then pinged Vlan10, 20 and 30 Gateways and all pings were successful!!
 I tested DNS Resolver by using Powershell command Resolve-Dnsname google.com and it returned real public ip addresses!!!
-
-## 7. Learning Outcome
 
 I am really getting to understand Virtualisation and Hypervisors. I researched and learned about different types of Network Adaptors and their usecase inside Hypervisors for the purpose of this lab. 
 I have also just now started to dip my toes in the world of pfSense and got my hands on an actual Firewall tool. 
