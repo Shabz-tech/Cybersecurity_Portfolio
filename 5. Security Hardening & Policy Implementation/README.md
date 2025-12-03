@@ -81,15 +81,13 @@ Okay I hardened the Security for our User Vlan but I used the Active Directory G
 
 #### 1. Security Visibility (Auditing)
 
-- 1. Log into Windows Server 2019 (DC).
+1. Log into Windows Server 2019 (DC).
   
   2. Open Group Policy Management (gpmc.msc).
   
   3. Expand your Forest > Domains > shab.rmit.com
   
   4. Right-click Default Domain Policy > Edit.
-     
-     - *Architect's Note:* In production, we make a new GPO. For this lab, editing Default is fine.
   
   **Navigate to:** Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies
   
@@ -106,3 +104,8 @@ Okay I hardened the Security for our User Vlan but I used the Active Directory G
   3. **Detailed Tracking:**
      
      - Audit Process Creation -> Success (Crucial for seeing what malware runs later).
+
+## Thoughts
+
+I thought this Lab would not take as long as it did. I had to read into a lot different services and relevant Ports required for Active Directory to function correctly. It was a lot of trial and error with Firewall rules. I learnt how easy it is to break the network because of one slightly incorrect policy/rule on the Firewall.
+In the next section, I am going to create a README.md where I will love to share and talk about the theory that is behind all the tools that I have been using to connect the network so far.
