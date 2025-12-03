@@ -68,17 +68,13 @@ The lab is something I decided to do to expand my knowledge on real world networ
   - Static and dynamic content delivery
 - Verified DNS configuration (Forward Lookup Zones)
 - Tested IIS using:
-  - http://shabtech.com
   - http://192.168.10.10
-  - http://127.0.0.1
 
 ---
 
 ### 4. **FTP Server Installation & Testing**
 - Installed **FTP Server** as part of IIS role
 - Created FTP site in IIS:
-  - Root folder: `C:\inetpub\wwwroot`
-  - Configured authentication and permissions
 - Tested FTP connection from client browser
 - Logged in with domain user credentials
 - Confirm file transfer capability
