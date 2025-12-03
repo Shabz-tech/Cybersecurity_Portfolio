@@ -1,4 +1,4 @@
-# Lab 4: Security Hardening & Policy Implementation
+# Lab 5: Security Hardening & Policy Implementation
 
 ### Objective
 
