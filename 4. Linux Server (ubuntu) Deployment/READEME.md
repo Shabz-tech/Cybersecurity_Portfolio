@@ -8,7 +8,7 @@ Deploy a Linux Machine which will be our server on subnet 192.168.30.0/24 and te
 I have fallen in love with Linux and also the Command Line in general since I found my love for Linux. I was told that a Security Engineer who only knows Windows is half blind and this is my way to showcase my familiarity with Linux. 
 
 ## 1. ​Network Achitecture
-:
+
 | Interface | Zone | Subnet | VirtualBox Network | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | **WAN** | WAN | *Home DHCP* | Bridged Adapter | Physical Wi-Fi/Ethernet access. |
@@ -54,22 +54,37 @@ I pinged 192.168.30.1 and 192.168.10.10 (DC) and I recieved all packets that wer
 ---
 
 ## 4. Joining the Domain
-Before joining the domain, I opened the terminal and ran sudo apt update && sudo apt upgrade -y to download and install the latest OS updates.
-I then installed SSH server by running the command sudo apt install openssh-server
+Before joining the domain, I installed the lasted OS updates.
+1. Open terminal
+2. Type sudo apt update && sudo apt upgrade -y
+3. Press enter
+4. Wait
 
-Now lets get our Linux VM into our Domain. On Linux, there is no Active Directory (AD) so we must download the dependencies which makes it simpler for users to join AD.
-I used the command sudo apt install realmd sssd sssd-tools libnss-sss libpam-sss adcli samba-common-bin oddjob oddjob-mkhomedir packagekit -y
-I will take more about these commands in my learning outcome section.
-After installing the dependencies, I ran sudo realm discover shab.rmit.com to discover the domain.
+I then installed SSH server after OS had finished updating.
+1. sudo apt install openssh-server
+
+Now the machine is ready to connect to our Domain. 
+
+On Linux, there is no Active Directory (AD) so I downloaded the dependencies which makes it simpler for Linux users to join AD.
+1. In terminal run the below command in that order.
+2. sudo apt install realmd sssd sssd-tools libnss-sss libpam-sss adcli samba-common-bin oddjob oddjob-mkhomedir packagekit -y
+3. sudo realm discover shab.rmit.com
 Once discovered - it means our DNS settings are correct.
-After discovering, I joined the domain by running the command sudo realm join -U Administrator shab.rmit.com
-And finally to confirm, I ran id administrator@shab.rmit.com inside the terminal.
+4. sudo realm join -U Administrator shab.rmit.com
+And finally to confirm that I had joined, I ran the below command.
+5. id administrator@shab.rmit.com
+
+I will take more about these commands in my learning outcome section.
 
 ## 5. SSH Server
 Now it was time to test our Linux VM's SSH services.
-I used the Windows Client VM on 192.168.20.0/24 subnet.
-I logged into our domain using Administrator credentials.
-I then opened CMD prompt and attempted to SSH into our Linux machine. ssh administrator@shab.rmit.com@192.168.30.10
+1. Open Windows Client VM on 192.168.20.0/24 subnet.
+2. Logged into our domain using Administrator credentials.
+3. Opened CMD prompt.
+4. Typed ssh administrator@shab.rmit.com@192.168.30.10
+5. Press enter.
+6. Enter password.
+
 I was in!! I was able to go around the file systems on my Linux machine while I was on my Windows VM.
 
 ---
@@ -82,21 +97,21 @@ I just need to learn the patterns and a few basic commands to navigate my way ar
 So far, I have learnt that you have your categories and then commands for those categories. 
 
 A few examples are:
-For file navigation I use ls, cd, pwd. 
-For editing, it is nano or vim. 
-For file operators, use commands such as cp, mv, rm, mkdir. 
-chmod for permissions. 
-ps for processes. 
-Networking commands such as ip, ping iptables, netstat. 
+- For file navigation I use ls, cd, pwd. 
+- For editing, it is nano or vim. 
+- For file operators, use commands such as cp, mv, rm, mkdir. 
+- chmod for permissions. 
+- ps for processes. 
+- Networking commands such as ip, ping iptables, netstat. 
 The list goes on.
 
 Now all these commands are followed by an option argument.
 
 I learnt to navigate the man page of different commands to learn about the options and what they do.
 
-Linux also has online resources which I used a lot to learn about Active Directory dependancies and also routing in Lab 1.
+Linux also has online resources which I used a lot to learn about Active Directory dependancies and also routing when I was working on Lab 1.
 
-Mastery Linux is knowing what you want to do and How to describe it in Google or man pages. All jokes aside, I learnt that I need to use the correct resources and build muscle memory inside the terminal by repeating tasks.
+Mastery Linux is knowing what you want to do and how to describe it in Google or man pages. All jokes aside, I learnt that I need to use the correct resources and build muscle memory inside the terminal by repeating tasks.
 
 ![Screenshot](3.png)
 ![Screenshot](4.png)
