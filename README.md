@@ -46,29 +46,29 @@ This project was broken down into distinct phases. Click the links below to read
 
 *Before securing the network, I had to build it.*
 
-- **[Layer 2 Switching & VLANs]** - Configuring the physical Cisco switch, setting up VLANs, and trunking.
+- **Layer 2 Switching & VLANs** - Configuring the physical Cisco switch, setting up VLANs, and trunking.
 
-- **[Layer 3 Routing]** - Enabling inter-VLAN routing using "Router on a Stick."
+- **Layer 3 Routing** - Enabling inter-VLAN routing using "Router on a Stick."
 
-- **[DHCP Services]** - Automating IP address assignment for different subnets.
+- **DHCP Services** - Automating IP address assignment for different subnets.
 
 ### Phase 2: Security & Services (The Blue Team)
 
 *Moving from connectivity to security and application hosting.*
 
-- **[The Firewall (pfSense)]** - replacing the router with a dedicated firewall and defining strict rules.
+- **The Firewall (pfSense)** - replacing the router with a dedicated firewall and defining strict rules.
 
-- **[DMZ & Server Hardening]** - Setting up a web server in the DMZ and hardening SSH access.
+- **DMZ & Server Hardening** - Setting up a web server in the DMZ and hardening SSH access.
 
-- **[Centralized Logging]** - Creating a "Single Source of Truth" for logs using Syslog.
+- **Centralized Logging** - Creating a "Single Source of Truth" for logs using Syslog.
 
 ### Phase 3: The Attack & Analysis (Red vs. Blue)
 
 *Testing the defenses with real-world attacks and analyzing the fallout.*
 
-- **[The Attack (Red Team Ops)]** - Using Kali Linux, Nmap, and Hydra to generate attack traffic.
+- **The Attack (Red Team Ops)** - Using Kali Linux, Nmap, and Hydra to generate attack traffic.
 
-- **[SIEM Deployment (Wazuh)]** - Deploying a SIEM to ingest logs, detect threats, and visualize the attacks from Lab 11.
+- **SIEM Deployment (Wazuh)** - Deploying a SIEM to ingest logs, detect threats, and visualize the attacks from Lab 11.
 
 ## Who This Repo Is For
 
